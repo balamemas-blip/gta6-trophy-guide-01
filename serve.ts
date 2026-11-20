@@ -14,7 +14,7 @@ const portFlag = args.indexOf('--port');
 const wanted = portFlag === -1 ? 8080 : Number(args[portFlag + 1]);
 const port = Number.isInteger(wanted) && wanted > 0 && wanted < 65536 ? wanted : 8080;
 
-const TYPES: Record<string, string> = {
+const TYPES = {
   '.html': 'text/html; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8',
   '.mjs': 'text/javascript; charset=utf-8',
@@ -44,7 +44,7 @@ createServer((req, res) => {
     res.writeHead(403).end('forbidden');
     return;
   }
-  let size: number;
+  let size;
   try {
     const info = statSync(file);
     if (!info.isFile()) throw new Error('not a file');

@@ -9,7 +9,7 @@
     "gamemapa.com — All 55 GTA 6 Trophies — gamemapa.com/en/gta-6/guides/gta-6-trophy-achievement-list/",
     "Insider Gaming — Complete GTA 6 Trophy List — insider-gaming.com/complete-gta-6-trophy-list-how-to-get-all-trophies-achievements/"
   ],
-  "status_note": "The game released in November 2026 and the community has not verified a missable list yet. Five hidden trophies are still unsolved — their guides say so instead of inventing a method. Counts (250 stunts of 397, 42 shooting-range challenges at 12 ranges, 14 drone-race locations, 18 meditation spots, 18 card sets, 100 WAiNK scans, 50 of 80 challenges, 52 areas, 9 gangs, 8 garages, 500 profile actions) are cross-checked community figures from gamemapa.com and KeenGamer.",
+  "status_note": "The game released in November 2026 and the community has not verified a missable list yet. Five hidden trophies are fully unsolved (Challenging Tank, In The Beginning…, Capital Offense, Personal Best, The Truth Is Out There) and two more have only an unverified likely reading (Bad Luck, I Guess; Ten Pin) — their guides say so instead of inventing a method. Counts (250 stunts of 397, 42 shooting-range challenges at 12 ranges, 14 drone-race locations, 18 meditation spots, 18 card sets, 100 WAiNK scans, 50 of 80 challenges, 52 areas, 9 gangs, 8 garages, 500 profile actions) are cross-checked community figures from gamemapa.com and KeenGamer.",
   "trophies": [
     {
       "id": 1,
@@ -21,7 +21,7 @@
       "missable": "no",
       "difficulty": "Very hard",
       "time": "200–300 hours (Push Square estimate)",
-      "guide": "There is nothing separate to do for the platinum: it unlocks the moment the other 54 trophies are yours. Treat this guide's roadmap as the order of work — story first, stranger strands next, then activities, collectibles and the open-world lists, with the 100% completion clean-up last. Push Square puts the full hunt at up to 300 hours and the story alone at roughly 60, so pace it as a long project rather than a weekend sprint.",
+      "guide": "The platinum arrives on its own the moment the other 54 trophies are earned — there is no separate task for it. Work the roadmap in order: story, stranger strands, activities, collectibles, open-world lists, then the 100% clean-up. Push Square estimates the full hunt at up to 300 hours, the story alone around 60, so treat it as a season-long project, not a weekend.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "Push Square — GTA 6 Trophy Guide & Roadmap"]
     },
     {
@@ -34,7 +34,7 @@
       "missable": "unconfirmed",
       "difficulty": "Easy",
       "time": "Story, opening hours",
-      "guide": "Finish the opening mission, Gone Fishing, all the way to its mission-complete screen. It is the first story mission, so anyone playing the story earns this one — just follow the on-screen objectives. As a habit, keep a manual save before big missions; nothing in the official description suggests this one can be missed, but no verified missable list exists yet.",
+      "guide": "Play the opening mission, Gone Fishing, through to its completion screen. It is the first mission of the story, so every player earns it by simply following the objectives. Keep a manual save before major missions as a habit — no verified missable list exists yet, though nothing in the official description suggests this one can be missed.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "Push Square — GTA 6 Trophy Guide & Roadmap"]
     },
     {
@@ -47,7 +47,7 @@
       "missable": "unconfirmed",
       "difficulty": "Easy",
       "time": "Story",
-      "guide": "Play every mission of Chapter 1 to its end. Chapter trophies come from story progress alone: work through the main missions in order and this one pops when the chapter closes. Side content in between does not matter — only the story missions count toward it.",
+      "guide": "Finish every mission in Chapter 1. Chapter trophies come from story progress alone, so work the main missions in order and this pops when the chapter closes. Side activities between missions do not count toward it — only the story missions do.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "Push Square — GTA 6 Trophy Guide & Roadmap"]
     },
     {
@@ -60,7 +60,7 @@
       "missable": "unconfirmed",
       "difficulty": "Easy",
       "time": "Story",
-      "guide": "Finish all of Chapter 2's missions. The asterisks are part of the official trophy name, exactly as PlayStation publishes it — not a censor in this guide. Like the other chapter trophies, it unlocks at the chapter's close from story progress alone.",
+      "guide": "Complete all of Chapter 2's missions. The asterisks are part of the official name exactly as PlayStation publishes it — not a censor added by this guide. Like the other chapter trophies it unlocks at the chapter's close from story progress alone.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "Push Square — GTA 6 Trophy Guide & Roadmap"]
     },
     {
@@ -73,7 +73,7 @@
       "missable": "unconfirmed",
       "difficulty": "Easy",
       "time": "Story",
-      "guide": "Complete every mission in Chapter 3. Around this point new stranger strands open up — Andy, Kenton and the others — but the chapter trophy only needs the main missions. You can leave the stranger missions for the clean-up phase after the story ends.",
+      "guide": "Complete every mission in Chapter 3. By this point stranger strands start opening — Andy, Kenton and the rest — but the chapter trophy only needs the main missions. Leave the stranger missions for the post-story clean-up.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "Push Square — GTA 6 Trophy Guide & Roadmap"]
     },
     {
@@ -86,7 +86,7 @@
       "missable": "unconfirmed",
       "difficulty": "Easy",
       "time": "Story",
-      "guide": "Finish every mission in Chapter 4, the last full chapter before the finale. Keep a manual save as the chapter nears its end — a save costs nothing and no missable list is verified yet. Once the chapter closes, only the final mission stands between you and the story's gold trophy.",
+      "guide": "Finish every mission in Chapter 4, the last full chapter before the finale. Save manually as the chapter nears its end — a save costs nothing and no missable list is verified yet. After this chapter closes, only the final mission stands between you and the story's gold trophy.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "Push Square — GTA 6 Trophy Guide & Roadmap"]
     },
     {
@@ -99,7 +99,7 @@
       "missable": "unconfirmed",
       "difficulty": "Easy",
       "time": "Story, ~60 hours to reach it (reviews via VGC / Push Square)",
-      "guide": "Complete the final story mission. Reviews put the story at around 60 hours; once this trophy pops, the game does not end your save — you keep exploring Leonida freely, and Push Square notes a 100% completion checklist unlocks after the story to help with the clean-up. Do the story first, then mop up everything else in free roam.",
+      "guide": "Complete the final story mission. Reviews put the story at roughly 60 hours; finishing it does not end your save — you keep free-roaming Leonida, and Push Square notes a 100% completion checklist unlocks after the story. Do the story first, then mop up everything else in free roam.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "Push Square — GTA 6 Trophy Guide & Roadmap", "planetgta6.com — story length ~60 hours per reviews"]
     },
     {
@@ -112,7 +112,7 @@
       "missable": "unconfirmed",
       "difficulty": "Easy",
       "time": "Story",
-      "guide": "Play the story mission Breakfast Run through to its mission-complete screen. Named-mission trophies like this one ask only that you finish the mission — if it fails, retry from the checkpoint; failing does not lock you out of the trophy.",
+      "guide": "Play the story mission Breakfast Run to its completion screen. Named-mission trophies ask only that you finish the mission — failing and retrying from a checkpoint does not lock you out.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "Push Square — GTA 6 Trophy Guide & Roadmap"]
     },
     {
@@ -125,7 +125,7 @@
       "missable": "unconfirmed",
       "difficulty": "Medium",
       "time": "Story",
-      "guide": "Complete the story mission The Cartel Heist, one of the game's big set-piece heists. Heists run longer and harder than regular missions, so stock up on ammo and armour before you start and lean on the checkpoints if a section goes wrong. The trophy is for finishing the mission, not for any particular approach.",
+      "guide": "Complete the story mission The Cartel Heist, one of the game's big set-piece heists. Heists run longer and harder than regular missions, so stock up on ammunition and armour first and lean on the checkpoints. The trophy is for finishing, not for any particular approach.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "Push Square — GTA 6 Trophy Guide & Roadmap"]
     },
     {
@@ -138,7 +138,7 @@
       "missable": "unconfirmed",
       "difficulty": "Easy",
       "time": "Story",
-      "guide": "Complete the story mission Child's Play. As with every named-mission trophy, the official description asks only that you finish that mission — follow its objectives to the end and the trophy pops on completion.",
+      "guide": "Complete the story mission Child's Play. Like every named-mission trophy, the official description asks only that you finish that mission — follow its objectives to the end and it pops on completion.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "Push Square — GTA 6 Trophy Guide & Roadmap"]
     },
     {
@@ -151,7 +151,7 @@
       "missable": "unconfirmed",
       "difficulty": "Easy",
       "time": "Story",
-      "guide": "Complete the story mission Headliners. The trophy name DWNFALL is a stylised spelling from the official list — it is not a typo in this guide. Finish the mission and the trophy unlocks.",
+      "guide": "Complete the story mission Headliners. DWNFALL is a stylised spelling from the official list, not a typo in this guide. Finish the mission and the trophy unlocks.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "Push Square — GTA 6 Trophy Guide & Roadmap"]
     },
     {
@@ -164,7 +164,7 @@
       "missable": "unconfirmed",
       "difficulty": "Medium",
       "time": "Story",
-      "guide": "Complete the story mission VCIA Takedown, set around Vice City International Airport. Expect a combat-heavy mission — bring a good rifle, keep moving between cover, and let the checkpoints carry you through the harder stretches. Finishing it is all the trophy asks.",
+      "guide": "Complete the story mission VCIA Takedown, set around Vice City International Airport. Expect heavy combat — bring a solid rifle, move between cover, and let the checkpoints carry you through the harder stretches. Finishing is all the trophy asks.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "Push Square — GTA 6 Trophy Guide & Roadmap"]
     },
     {
@@ -177,7 +177,7 @@
       "missable": "unconfirmed",
       "difficulty": "Medium",
       "time": "Story",
-      "guide": "Complete the story mission Operation Savage Glory, one of the later named missions — it arrives after you have had plenty of practice with the game's combat and driving. Play it through to the end; the trophy is tied to completion, not to a score or a specific tactic.",
+      "guide": "Complete the story mission Operation Savage Glory, one of the later named missions — it comes after plenty of practice with combat and driving. Play it through to the end; the trophy is tied to completion, not to a score or a tactic.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "Push Square — GTA 6 Trophy Guide & Roadmap"]
     },
     {
@@ -190,7 +190,7 @@
       "missable": "no",
       "difficulty": "Very hard",
       "time": "Endgame clean-up, after the story",
-      "guide": "Reach 100% on the in-game completion checklist, which Push Square says unlocks after you finish the story (under Progress / Stats). Rockstar has not published exactly what the 100% checklist covers, but the visible trophies map most of it: story, stranger strands, collectibles, activities and the open-world checklists. Work through this guide's roadmap stage by stage and check the in-game list after each stage — it is the only authoritative record of what is left.",
+      "guide": "Reach 100% on the in-game completion checklist, which Push Square says unlocks after you finish the story (under Progress / Stats). Rockstar has not published exactly what the checklist covers, but the visible trophies map most of it: story, stranger strands, collectibles, activities and the open-world lists. Work this guide's roadmap stage by stage and check the in-game list after each stage — it is the only authoritative record of what is left.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "Push Square — GTA 6 Trophy Guide & Roadmap", "KeenGamer — GTA 6 Trophy Guide & Platinum Roadmap"]
     }
 ,
@@ -206,7 +206,7 @@
       "time": "Grindy, spread across the game",
       "count": 250,
       "count_total": 397,
-      "guide": "Complete any 250 stunts across Leonida. The cross-checked community count is 397 stunts in total — jumps, under-bridge flights, knife flights and base jumps — so you only need about two-thirds of them. Stunts are tracked as you play, so many will happen naturally while driving and flying; for the rest, work through stunt jumps one area at a time and use the map to find ones you have not tried. A stunt counts once it is completed, not merely attempted.",
+      "guide": "Complete any 250 stunts across Leonida. The cross-checked community total is 397 stunts — jumps, under-bridge flights, knife flights and base jumps — so you need roughly two-thirds of them. Many happen naturally while driving and flying; for the rest, work stunt jumps one area at a time. A stunt counts once completed, not merely attempted.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "gamemapa.com — 397 stunts in total", "KeenGamer — GTA 6 Trophy Guide & Platinum Roadmap"]
     },
     {
@@ -219,7 +219,7 @@
       "missable": "no",
       "difficulty": "Easy",
       "time": "1–2 hours, early game",
-      "guide": "Try each of the nine activity types at least once: fishing, hunting, golf, the shooting range, pool, basketball, a video game, a race and a stunt (gamemapa's cross-checked list). You do not need to be good at any of them — just start and finish one of each. Do this early, while you are learning the map, and it doubles as a tour of what Leonida offers.",
+      "guide": "Try each of the nine activity types at least once: fishing, hunting, golf, the shooting range, pool, basketball, a video game, a race and a stunt (gamemapa's cross-checked list). You do not need to be good at any of them — just start and finish one of each. Do it early, while learning the map; it doubles as a tour of what Leonida offers.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "gamemapa.com — the 9 activity types"]
     },
     {
@@ -234,7 +234,7 @@
       "time": "Several hours of practice",
       "count": 42,
       "count_total": 42,
-      "guide": "Earn a gold medal in all 42 Shooting Range challenges across the 12 shooting ranges (gamemapa's cross-checked figures). This is the skill test of the trophy list: learn each range's weapon and target pattern, take your time on the first runs to learn the layout, then chase gold once you know where the targets appear. If a challenge keeps beating you, leave it and come back after more story practice — none of the ranges are missable.",
+      "guide": "Earn a gold medal in all 42 Shooting Range challenges across the 12 shooting ranges (gamemapa's cross-checked figures). This is the list's skill test: learn each range's weapon and target pattern, take the first runs slowly to learn the layout, then chase gold. If a challenge keeps beating you, leave it and return after more story practice — no range is missable.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "gamemapa.com — 42 challenges, 12 ranges", "KeenGamer — GTA 6 Trophy Guide & Platinum Roadmap"]
     },
     {
@@ -249,7 +249,7 @@
       "time": "2–4 hours",
       "count": 14,
       "count_total": 14,
-      "guide": "Win a Top Fun drone race at all 14 locations. Drone races are a separate activity from car races, so learn the drone's handling first — smooth lines beat jerky corrections, and cutting corners through gates saves more time than raw speed. Win one race at each location; the trophy tracks locations, not total wins, so move on as soon as a location is done.",
+      "guide": "Win a Top Fun drone race at all 14 locations. Drone races are a separate activity from car races — learn the drone's handling first; smooth lines beat jerky corrections, and cutting corners through gates saves more time than raw speed. Win one race per location; the trophy tracks locations, not total wins.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "KeenGamer — GTA 6 Trophy Guide & Platinum Roadmap"]
     },
     {
@@ -263,7 +263,7 @@
       "difficulty": "Medium",
       "time": "3–5 hours",
       "count": 20,
-      "guide": "Win 20 different races — different events, not the same race 20 times. Mix race types (street, off-road, boat and air where available) and spread them across the map so you also make progress on exploring Leonida. Upgrading your vehicle for the class you race in matters more than perfect driving, so spend a little of your laundered cash on a competitive car before grinding these.",
+      "guide": "Win 20 different races — different events, not the same race 20 times. Mix race types (street, off-road, boat and air where available) and spread them across the map so you also progress on exploring Leonida. A competitive car in the class you race matters more than perfect driving, so spend a little laundered cash on one before grinding these.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "Push Square — GTA 6 Trophy Guide & Roadmap"]
     },
     {
@@ -276,7 +276,7 @@
       "missable": "no",
       "difficulty": "Easy",
       "time": "Under 1 hour once fishing is learned",
-      "guide": "Beat Cal in a fishing challenge. Fishing is one of the nine activity types, so this also feeds Master of None. Learn the fishing mini-game's rhythm first — steady reeling with the line tension in mind — then take on Cal's challenge. If you lose, you can retry the challenge; losing a fishing challenge does not lock anything out.",
+      "guide": "Beat Cal in a fishing challenge. Fishing is one of the nine activity types, so this also feeds Master of None. Learn the fishing mini-game's rhythm first — steady reeling with the line tension in mind — then take on Cal's challenge. Losing does not lock anything out; you can retry.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "Push Square — GTA 6 Trophy Guide & Roadmap"]
     },
     {
@@ -289,7 +289,7 @@
       "missable": "no",
       "difficulty": "Easy",
       "time": "Under 1 hour",
-      "guide": "Complete one arcade game — finish it, not just start it. Find an arcade machine in Leonida, pick a game, and play it through to its end screen. It is one of the quickest trophies on the list and counts toward trying the activity types for Master of None.",
+      "guide": "Complete one arcade game — finish it, not just start it. Find an arcade machine in Leonida, pick a game, and play it through to its end screen. One of the quickest trophies on the list, and it counts toward trying the activity types for Master of None.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "Push Square — GTA 6 Trophy Guide & Roadmap"]
     },
     {
@@ -302,7 +302,7 @@
       "missable": "unconfirmed",
       "difficulty": "Medium",
       "time": "Story, from Chapter 3",
-      "guide": "Complete Andy's final mission. Andy's strand is one of the stranger mission chains: meet Andy, work through his missions in order, and the trophy pops on the last one. Gamemapa reports Andy's chain as 5 quests, Lucia only, from Chapter 3 — treat that as a community report, not an official fact. Stranger strands are hidden trophies, so keep the spoiler setting in mind if you are avoiding story details.",
+      "guide": "Complete Andy's final mission. Andy's strand is one of the stranger mission chains: meet Andy, work through his missions in order, and the trophy pops on the last one. Gamemapa reports Andy's chain as 5 quests, Lucia only, from Chapter 3 — treat that as a community report, not an official fact.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "gamemapa.com — Andy's chain, community report"]
     },
     {
@@ -315,7 +315,7 @@
       "missable": "unconfirmed",
       "difficulty": "Medium",
       "time": "Side content, after the story",
-      "guide": "Complete Kenton's final mission. Like the other stranger strands, Kenton's missions unlock as you meet him in the open world and play through his chain in order — the trophy is for the last mission, so there is no shortcut to it. Do the stranger strands after the story, when you can roam Leonida freely and pick them up one by one.",
+      "guide": "Complete Kenton's final mission. Like the other stranger strands, Kenton's missions unlock as you meet him in the open world and play his chain in order — the trophy is for the last mission, so there is no shortcut. Do the stranger strands after the story, when you can roam freely and pick them up one by one.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "Push Square — GTA 6 Trophy Guide & Roadmap"]
     },
     {
@@ -342,7 +342,7 @@
       "difficulty": "Medium",
       "time": "Side content, several hours",
       "count": 8,
-      "guide": "Complete 8 stranger mission strands across Leonida. This is the umbrella trophy for the side characters: Andy, Kenton, Billy, Randy, Tyrone and Bret each have a strand, plus other strangers scattered around the state. Finish any 8 full strands — the individual final-mission trophies count toward it. Check your progress in the game's stats and mop up the strands you have not started after the story.",
+      "guide": "Complete 8 stranger mission strands across Leonida. This is the umbrella trophy for the side characters: Andy, Kenton, Billy, Randy, Tyrone and Bret each have a strand, plus other strangers scattered around the state. Finish any 8 full strands — the individual final-mission trophies count toward it. Check your progress in the game's stats and mop up unstarted strands after the story.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "Push Square — GTA 6 Trophy Guide & Roadmap"]
     },
     {
@@ -355,7 +355,7 @@
       "missable": "unconfirmed",
       "difficulty": "Medium",
       "time": "Side content, after the story",
-      "guide": "Complete Randy's final mission. Randy's strand is one of the stranger chains counted toward Strangers & Freaks, so finishing it moves two trophies at once. Work through his missions in order in free roam after the story, when every stranger location is open to you.",
+      "guide": "Complete Randy's final mission. Randy's strand is one of the stranger chains counted toward Strangers & Freaks, so finishing it moves two trophies at once. Work through his missions in order in free roam after the story, when every stranger location is open.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "Push Square — GTA 6 Trophy Guide & Roadmap"]
     },
     {
@@ -368,7 +368,7 @@
       "missable": "unconfirmed",
       "difficulty": "Medium",
       "time": "Side content, after the story",
-      "guide": "Complete Tyrone's final mission. Tyrone's chain is another stranger strand: meet him, play his missions in order, and the trophy pops on the last one. If you are hunting the platinum, clear all five named stranger strands plus three more to also earn Strangers & Freaks.",
+      "guide": "Complete Tyrone's final mission. Tyrone's chain is another stranger strand: meet him, play his missions in order, and the trophy pops on the last one. Clear all five named stranger strands plus three more and Strangers & Freaks comes with them.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "Push Square — GTA 6 Trophy Guide & Roadmap"]
     },
     {
@@ -397,7 +397,7 @@
       "missable": "unconfirmed",
       "difficulty": "Medium",
       "time": "Side content",
-      "guide": "Hunt a unique animal for Bret. Bret's strand involves hunting, so bring a rifle with a scope and track the animal patiently — unique animals are usually found in one specific area, and the hunt is the point, not a quick kill. This is a hidden trophy, so the official description gives no location; community hunting guides will name the animal and its area once they are verified, and this guide will not guess at either.",
+      "guide": "Hunt a unique animal for Bret. Bret's strand involves hunting, so bring a scoped rifle and track the animal patiently — unique animals are usually found in one specific area, and the hunt is the point, not a quick kill. This is a hidden trophy, so the official description gives no location; community hunting guides will name the animal and its area once verified, and this guide will not guess at either.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "Push Square — GTA 6 Trophy Guide & Roadmap"]
     },
     {
@@ -412,7 +412,7 @@
       "time": "Grindy, across the whole game",
       "count": 3,
       "count_total": 18,
-      "guide": "Complete 3 collectible card sets. There are 18 card sets in total (gamemapa's cross-checked count), so you only need three — pick the sets whose cards cluster in areas you already visit and finish those first. Cards are scattered across Leonida, so collect them as you explore rather than hunting all of them in one sweep; a card checklist or map from a community guide helps, but check it against your in-game count.",
+      "guide": "Complete 3 collectible card sets. There are 18 card sets in total (gamemapa's cross-checked count), so you only need three — pick the sets whose cards cluster in areas you already visit and finish those first. Cards are scattered across Leonida, so collect them as you explore rather than hunting them all in one sweep; a card checklist or map from a community guide helps, but check it against your in-game count.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "gamemapa.com — 18 card sets"]
     },
     {
@@ -426,7 +426,7 @@
       "difficulty": "Medium",
       "time": "Across the whole game",
       "count": 100,
-      "guide": "Use the WAiNK app to scan 100 locations across Leonida — landmarks, curiosities and sculptures (gamemapa). WAiNK scanning is the game's photo/scan collectible: open the app at a point of interest and scan it. Scan everything you pass while doing other things and the count climbs on its own; for the last few, sweep the map region by region. A scan also counts toward discovering vehicles for Whip It Good, so combine the two.",
+      "guide": "Use the WAiNK app to scan 100 locations across Leonida — landmarks, curiosities and sculptures (gamemapa). WAiNK scanning is the game's photo/scan collectible: open the app at a point of interest and scan it. Scan everything you pass while doing other things and the count climbs on its own; for the last few, sweep the map region by region.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "gamemapa.com — landmarks, curiosities, sculptures"]
     },
     {
@@ -454,7 +454,7 @@
       "missable": "no",
       "difficulty": "Medium",
       "time": "Under 1 hour, free roam",
-      "guide": "With your partner alongside you, build up a 4-star wanted level, then lose the cops and escape. Do it away from tight city streets if you can — open roads and the countryside give you room to break line of sight, and a fast car with good handling helps more than a fast car with bad brakes. Your partner must be with you when the wanted level drops, so do not let them get separated during the chase.",
+      "guide": "With your partner alongside you, build up a 4-star wanted level, then lose the cops and escape. Do it away from tight city streets if you can — open roads and the countryside give room to break line of sight, and a fast car with good handling helps more than a fast car with bad brakes. Your partner must be with you when the wanted level drops, so do not let them get separated during the chase.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "Push Square — GTA 6 Trophy Guide & Roadmap"]
     },
     {
@@ -468,7 +468,7 @@
       "difficulty": "Hard",
       "time": "1–2 hours with practice",
       "count": 3,
-      "guide": "With your partner, rob 3 shops back-to-back without losing your wanted level — meaning you must keep the heat on through all three robberies, not escape between them. Plan a route of three close shops, hit them fast, and keep a getaway car parked nearby for the escape afterwards. This is one of the trickier partner trophies, so expect a few attempts; a failed run costs nothing but time.",
+      "guide": "With your partner, rob 3 shops back-to-back without losing your wanted level — meaning you must keep the heat on through all three robberies, not escape between them. Plan a route of three close shops, hit them fast, and keep a getaway car parked nearby for the escape afterwards. One of the trickier partner trophies, so expect a few attempts; a failed run costs nothing but time.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "Push Square — GTA 6 Trophy Guide & Roadmap"]
     },
     {
@@ -496,7 +496,7 @@
       "difficulty": "Medium",
       "time": "Under 1 hour in free roam",
       "count": 5,
-      "guide": "Take down 5 enemies in a single use of Combat Focus. Combat Focus is the game's slow-down aiming mode — trigger it when a group of enemies is bunched up, then work through them quickly while time is slowed. Pick a busy fight with weak enemies rather than a boss encounter, and use a weapon with a fast fire rate so you can drop five before the focus ends.",
+      "guide": "Take down 5 enemies in a single use of Combat Focus. Combat Focus is the game's slow-down aiming mode — trigger it when a group of enemies is bunched up, then work through them quickly while time is slowed. Pick a busy fight with weak enemies rather than a boss encounter, and use a fast-firing weapon so you can drop five before the focus ends.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "Push Square — GTA 6 Trophy Guide & Roadmap"]
     },
     {
@@ -509,7 +509,7 @@
       "missable": "unconfirmed",
       "difficulty": "Easy",
       "time": "Under 1 hour in free roam",
-      "guide": "Make an unscheduled departure at Vice City International Airport — in plain terms, steal a plane (or otherwise take off) from VCIA without a ticket or a flight plan. Get onto the airfield, grab an aircraft and take off. Expect a wanted level, so be ready to fly away fast once you are airborne. This is a hidden trophy, so the official description is deliberately vague, but the airport setting makes the intent clear.",
+      "guide": "Make an unscheduled departure at Vice City International Airport — in plain terms, steal a plane (or otherwise take off) from VCIA without a ticket or a flight plan. Get onto the airfield, grab an aircraft and take off. Expect a wanted level, so be ready to fly away fast once airborne. This is a hidden trophy, so the official description is deliberately vague, but the airport setting makes the intent clear.",
       "sources": ["Official trophy list (PSN) via Exophase & PSNProfiles", "Push Square — GTA 6 Trophy Guide & Roadmap"]
     },
     {

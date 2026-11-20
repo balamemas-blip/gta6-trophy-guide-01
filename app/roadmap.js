@@ -46,14 +46,14 @@ export function buildRoadmap(listElement, earnedIds) {
     const item = document.createElement('li');
     const title = document.createElement('h3');
     const number = document.createElement('span');
-    number.className = 'step-no';
+    number.className = 'stage-no';
     number.textContent = `Stage ${stage.order} — `;
     title.append(number, document.createTextNode(stage.heading));
     const text = document.createElement('p');
     text.textContent = stage.body;
     const done = stage.trophies.filter((id) => earnedIds.has(id)).length;
     const tally = document.createElement('p');
-    tally.className = 'meta-line';
+    tally.className = 'meta';
     tally.textContent = `${done} of ${stage.trophies.length} trophies in this stage earned`;
     item.append(title, text, tally);
     listElement.append(item);

@@ -1,7 +1,7 @@
 // Earned-trophy state for the tracker. Everything lives in the browser's
 // localStorage under one key; export writes a JSON file and import reads it
 // back. Nothing is sent anywhere — the guide works with the network off.
-export const PROGRESS_KEY = 'gta6-trophy-guide-progress-v2';
+export const PROGRESS_KEY = 'gta6-trophy-guide-progress-v3';
 export const EXPORT_FILENAME = 'gta6-trophy-progress.json';
 
 // Read the saved set of earned trophy ids. A missing, corrupt or
@@ -13,15 +13,15 @@ export function readProgress() {
     const parsed = JSON.parse(raw);
     const ids = Array.isArray(parsed) ? parsed : parsed.earned;
     if (!Array.isArray(ids)) return new Set();
-    return new Set(ids.filter((v) => Number.isInteger(v)));
+    return new Set(ids.filter((value) => Number.isInteger(value)));
   } catch {
     return new Set();
   }
 }
 
-// Persist the earned set, ids sorted so the stored file is stable.
+// Persist the earned set, ids sorted so the stored value is stable.
 export function writeProgress(earned) {
-  const ids = [...earned].filter((v) => Number.isInteger(v)).sort((a, b) => a - b);
+  const ids = [...earned].filter((value) => Number.isInteger(value)).sort((a, b) => a - b);
   localStorage.setItem(PROGRESS_KEY, JSON.stringify(ids));
 }
 
@@ -47,7 +47,7 @@ export async function parseProgressFile(file, knownIds) {
   const parsed = JSON.parse(await file.text());
   const ids = Array.isArray(parsed) ? parsed : parsed.earned;
   if (!Array.isArray(ids)) throw new Error('That file does not hold a trophy list.');
-  const wanted = ids.filter((v) => Number.isInteger(v));
-  const kept = knownIds ? wanted.filter((v) => knownIds.has(v)) : wanted;
+  const wanted = ids.filter((value) => Number.isInteger(value));
+  const kept = knownIds ? wanted.filter((value) => knownIds.has(value)) : wanted;
   return new Set(kept);
 }
