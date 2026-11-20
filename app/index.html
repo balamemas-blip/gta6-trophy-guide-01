@@ -3,35 +3,37 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GTA VI Trophy Guide &amp; Tracker — All 55 Trophies</title>
-<meta name="description" content="An offline guide and tracker for all 55 Grand Theft Auto VI trophies on PlayStation 5: roadmap to the platinum, missable warnings, and a cited how-to for every trophy.">
+<title>GTA VI Trophy Guide &amp; Tracker — All 55 PS5 Trophies</title>
+<meta name="description" content="Offline guide and tracker for all 55 Grand Theft Auto VI trophies on PlayStation 5: a roadmap to the platinum, missable warnings, and a cited how-to for every trophy. Works with the network off.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="hero">
-  <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies</p>
-  <h1>Leonida Trophy Guide</h1>
-  <p class="lede">Every trophy, its official name and description, a how-to in plain words with its sources, and a checklist that remembers what you have earned. No online trophies exist — all 55 are offline, single-player.</p>
-  <div class="progress-wrap">
-    <div class="progress-bar"><div id="progressFill" class="progress-fill"></div></div>
-    <p id="progressText" class="progress-text">0 of 55 earned</p>
+<header class="masthead">
+  <p class="eyebrow">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies &middot; all offline</p>
+  <h1>The Leonida Trophy Guide</h1>
+  <p class="intro">Every trophy with its official name, description and grade, a how-to in plain words with its sources, and a checklist that remembers what you have earned. There are no online trophies — all 55 are single-player, and nothing here needs PlayStation Plus or another player.</p>
+  <div class="meter" role="status" aria-label="Progress">
+    <div class="meter-track"><div id="meterFill" class="meter-fill"></div></div>
+    <p id="meterLabel" class="meter-label">0 of 55 earned</p>
+    <p id="meterGrades" class="meter-grades"></p>
   </div>
-  <p id="gradeCounts" class="grade-counts"></p>
 </header>
 
 <main>
-  <section class="roadmap" aria-labelledby="roadmapTitle">
-    <h2 id="roadmapTitle">Roadmap to the platinum</h2>
-    <p class="section-note">Play it in this order. The story first, the stranger strands second, then activities, collectibles and the open-world checklists — with 100% completion last. Push Square estimates the whole hunt at up to 300 hours; the story alone runs about 60 hours.</p>
-    <ol id="roadmapList" class="roadmap-list"></ol>
-    <p class="missable-note"><strong>Missables:</strong> no verified missable list exists yet — the game only just released. This guide flags one community-reported risk (a meditation spot) and marks every story trophy “unconfirmed” rather than guessing. Keep a manual save before big story missions.</p>
+  <section class="roadmap-block" aria-labelledby="roadmapHeading">
+    <h2 id="roadmapHeading">Roadmap to the platinum</h2>
+    <p class="block-note">Play it in this order. Story first, stranger strands second, then activities, collectibles and the open-world checklists — with 100% completion last. Push Square estimates the whole hunt at up to 300 hours; the story alone runs about 60 hours.</p>
+    <ol id="roadmapSteps" class="roadmap-steps"></ol>
+    <p class="missable-callout"><strong>About missables:</strong> no verified missable list exists yet — the game only just released. This guide flags one community-reported risk (a meditation spot) and marks every story trophy “unconfirmed” rather than guessing. Keep a manual save before big story missions.</p>
   </section>
 
-  <section class="controls" aria-label="Tracker controls">
-    <div class="control-row">
-      <label class="search-label">Search <input id="search" type="search" placeholder="Trophy, mission or keyword…" autocomplete="off"></label>
-      <label class="grade-label">Grade
-        <select id="gradeFilter">
+  <section class="tracker-block" aria-label="Trophy tracker">
+    <div class="toolbar">
+      <label class="search-box">Search
+        <input id="searchBox" type="search" placeholder="Trophy, mission or keyword…" autocomplete="off">
+      </label>
+      <label class="grade-box">Grade
+        <select id="gradeSelect">
           <option value="all">All grades</option>
           <option value="platinum">Platinum</option>
           <option value="gold">Gold</option>
@@ -39,37 +41,37 @@
           <option value="bronze">Bronze</option>
         </select>
       </label>
-      <label class="toggle"><input id="spoilerToggle" type="checkbox" checked> Hide story spoilers</label>
-      <label class="toggle"><input id="earnedOnly" type="checkbox"> Earned only</label>
+      <label class="switch"><input id="spoilerSwitch" type="checkbox" checked> Hide story spoilers</label>
+      <label class="switch"><input id="earnedSwitch" type="checkbox"> Earned only</label>
     </div>
-    <div id="kindFilters" class="chips" role="group" aria-label="Filter by kind"></div>
-    <div class="control-row">
-      <button id="exportBtn" type="button">Export progress</button>
-      <label class="import-label">Import progress <input id="importInput" type="file" accept="application/json,.json"></label>
-      <button id="resetBtn" type="button">Reset progress</button>
-      <p id="filterNote" class="filter-note"></p>
+    <div id="kindChips" class="chips" role="group" aria-label="Filter by kind"></div>
+    <div class="toolbar">
+      <button id="exportButton" type="button">Export progress</button>
+      <label class="import-button">Import progress <input id="importFile" type="file" accept="application/json,.json"></label>
+      <button id="resetButton" type="button">Reset progress</button>
+      <p id="filterHint" class="filter-hint"></p>
     </div>
   </section>
 
-  <div class="layout">
-    <section class="list-col" aria-label="Trophy list">
-      <p id="listCount" class="list-count"></p>
-      <ul id="trophyList" class="trophy-list"></ul>
-      <div id="emptyState" class="empty-state" hidden>
+  <div class="two-col">
+    <section class="list-pane" aria-label="Trophy checklist">
+      <p id="shownCount" class="shown-count"></p>
+      <ul id="trophyRows" class="trophy-rows"></ul>
+      <div id="noOnline" class="no-online" hidden>
         <h3>No online trophies</h3>
         <p>All 55 trophies are offline single-player trophies, confirmed by the official list (1 platinum, 2 gold, 6 silver, 46 bronze). Nothing here needs PlayStation Plus or another player.</p>
       </div>
     </section>
-    <aside class="detail-col" aria-label="Trophy detail">
-      <div id="detail" class="detail-card"></div>
+    <aside class="detail-pane" aria-label="Selected trophy">
+      <div id="trophyDetail" class="trophy-detail"></div>
     </aside>
   </div>
 
-  <section class="honesty" aria-labelledby="honestyTitle">
-    <h2 id="honestyTitle">What is confirmed — and what is not</h2>
+  <section class="sources-block" aria-labelledby="sourcesHeading">
+    <h2 id="sourcesHeading">What is confirmed — and what is not</h2>
     <p>Names, descriptions and grades are the official PlayStation list, via Exophase and PSNProfiles as cross-checked on 18 Nov 2026. Counts such as 250 stunts, 42 shooting-range challenges, 14 drone-race locations and 18 meditation spots are cross-checked community figures (GamesRadar+ / PowerPyx, as reported by gamemapa.com and KeenGamer). Five hidden trophies are still unsolved by the community — their guides say so plainly instead of inventing a method. Where a step is a community report rather than an official fact, the guide names the source beside it.</p>
     <h3>Sources</h3>
-    <ul id="sourceList" class="source-list"></ul>
+    <ul id="sourceLinks" class="source-links"></ul>
   </section>
 </main>
 
