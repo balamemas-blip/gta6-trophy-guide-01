@@ -1,82 +1,106 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Leonida Trophy Guide — All 55 GTA VI Trophies on PS5</title>
-<meta name="description" content="An offline guide and tracker for all 55 Grand Theft Auto VI trophies on PlayStation 5: a six-stage roadmap to the platinum, missable warnings, and a sourced how-to for every trophy. Works with the network off.">
+<title>Leonida Trophy Guide — GTA VI (PS5)</title>
+<meta name="description" content="Offline guide and tracker for all 55 Grand Theft Auto VI trophies on PlayStation 5: roadmap, missable flags, cited guides, saved progress.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="top">
-  <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies &middot; fully offline</p>
-  <h1>Leonida Trophy Guide</h1>
-  <p class="lede">Every trophy with its official name, description and grade, a how-to in plain words with its sources, and a checklist that remembers what you have earned. There are no online trophies — all 55 are single-player, and nothing here needs PlayStation Plus or another player.</p>
-  <div class="progress" role="status" aria-label="Progress">
-    <div class="progress-bar"><div id="progressFill" class="progress-fill"></div></div>
-    <p id="progressText" class="progress-text">0 of 55 earned</p>
-    <p id="progressByGrade" class="progress-grades"></p>
+<header id="top">
+  <div class="brand">
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; offline guide</p>
+    <h1>Leonida Trophy Guide</h1>
+    <p class="sub">All 55 trophies — 1 platinum, 2 gold, 6 silver, 46 bronze. No online trophies. One playthrough is enough; about 200 hours to the platinum.</p>
+  </div>
+  <div class="progress" id="progressBox" aria-live="polite">
+    <div class="progress-numbers"><strong id="earnedCount">0</strong><span> / 55 earned</span></div>
+    <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="progressBar"><i id="progressFill"></i></div>
+    <p class="progress-grades" id="gradeCounts"></p>
+    <div class="progress-actions">
+      <button type="button" id="exportBtn">Export progress</button>
+      <button type="button" id="importBtn">Import progress</button>
+      <input type="file" id="importFile" accept="application/json,.json" hidden>
+      <button type="button" id="sampleBtn">Try sample progress</button>
+      <button type="button" id="clearBtn">Clear all</button>
+    </div>
   </div>
 </header>
 
-<main>
-  <section class="roadmap" aria-labelledby="roadmapTitle">
-    <h2 id="roadmapTitle">Roadmap to the platinum</h2>
-    <p class="section-note">Play it in this order. Story first, stranger strands second, then activities, collectibles and the open-world checklists — with 100% completion last. Push Square estimates the whole hunt at up to 300 hours; the story alone runs about 60 hours.</p>
-    <ol id="roadmapList" class="roadmap-list"></ol>
-    <p class="warning-box"><strong>About missables:</strong> no verified missable list exists yet — the game only just released. This guide flags one community-reported risk (a meditation spot) and marks every story trophy “unconfirmed” rather than guessing. Keep a manual save before big story missions.</p>
+<nav id="tabs" aria-label="Guide sections">
+  <button type="button" id="tabChecklist" class="tab active" data-view="checklist">Checklist</button>
+  <button type="button" id="tabRoadmap" class="tab" data-view="roadmap">Roadmap &amp; 100%</button>
+</nav>
+
+<section id="toolbar" aria-label="Filters">
+  <label class="field">Search
+    <input type="search" id="searchBox" placeholder="Trophy name or word…" autocomplete="off">
+  </label>
+  <label class="field">Kind
+    <select id="kindFilter">
+      <option value="all">All kinds</option>
+      <option value="story">Story</option>
+      <option value="side">Side characters</option>
+      <option value="collectible">Collectibles</option>
+      <option value="activity">Activities</option>
+      <option value="robbery">Robberies</option>
+      <option value="money">Money &amp; property</option>
+      <option value="mischief">Open-world mischief</option>
+      <option value="completion">Completion</option>
+    </select>
+  </label>
+  <label class="field">Grade
+    <select id="gradeFilter">
+      <option value="all">All grades</option>
+      <option value="platinum">Platinum</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+      <option value="bronze">Bronze</option>
+    </select>
+  </label>
+  <label class="field">Show
+    <select id="stateFilter">
+      <option value="all">Earned + unearned</option>
+      <option value="unearned">Unearned only</option>
+      <option value="earned">Earned only</option>
+      <option value="missable">Missable</option>
+      <option value="unconfirmed">Unconfirmed method</option>
+    </select>
+  </label>
+  <label class="toggle"><input type="checkbox" id="spoilerToggle"> Hide story spoilers until earned</label>
+</section>
+
+<main id="main">
+  <section id="checklistView" aria-label="Trophy checklist">
+    <p id="missableNote" class="callout"><strong>Watch out:</strong> Positive Mental Attitude is the only trophy reported as potentially missable — do the balcony meditation with Lucia in Chapter 1. Seven trophies still have no verified method; they are marked UNCONFIRMED, never presented as solved.</p>
+    <p id="resultCount" class="muted" aria-live="polite"></p>
+    <ul id="trophyList" class="cards"></ul>
   </section>
 
-  <section class="tracker" aria-label="Trophy tracker">
-    <div class="controls">
-      <label class="field">Search
-        <input id="searchInput" type="search" placeholder="Trophy, mission or keyword…" autocomplete="off">
-      </label>
-      <label class="field">Grade
-        <select id="gradeFilter">
-          <option value="all">All grades</option>
-          <option value="platinum">Platinum</option>
-          <option value="gold">Gold</option>
-          <option value="silver">Silver</option>
-          <option value="bronze">Bronze</option>
-        </select>
-      </label>
-      <label class="toggle"><input id="spoilerToggle" type="checkbox" checked> Hide story spoilers</label>
-      <label class="toggle"><input id="earnedOnlyToggle" type="checkbox"> Earned only</label>
-    </div>
-    <div id="kindButtons" class="kind-buttons" role="group" aria-label="Filter by kind"></div>
-    <div class="controls">
-      <button id="exportBtn" type="button">Export progress</button>
-      <label class="import-label">Import progress <input id="importInput" type="file" accept="application/json,.json"></label>
-      <button id="clearBtn" type="button">Reset progress</button>
-      <p id="kindNote" class="kind-note"></p>
-    </div>
-  </section>
-
-  <div class="columns">
-    <section class="list-col" aria-label="Trophy checklist">
-      <p id="visibleCount" class="visible-count"></p>
-      <ul id="trophyList" class="trophy-list"></ul>
-      <div id="onlineEmpty" class="online-empty" hidden>
-        <h3>No online trophies</h3>
-        <p>All 55 trophies are offline single-player trophies, confirmed by the official list (1 platinum, 2 gold, 6 silver, 46 bronze). Nothing here needs PlayStation Plus or another player.</p>
-      </div>
-    </section>
-    <aside class="detail-col" aria-label="Selected trophy">
-      <div id="trophyDetail" class="trophy-detail"></div>
-    </aside>
-  </div>
-
-  <section class="honesty" aria-labelledby="honestyTitle">
-    <h2 id="honestyTitle">What is confirmed — and what is not</h2>
-    <p>Names, descriptions and grades are the official PlayStation list, via Exophase and PSNProfiles as cross-checked on 18 Nov 2026. Counts such as 250 stunts, 42 shooting-range challenges, 14 drone-race locations and 18 meditation spots are cross-checked community figures (gamemapa.com and KeenGamer). Five hidden trophies are still unsolved by the community, and two more have only an unverified likely reading — their guides say so plainly instead of inventing a method. Where a step is a community report rather than an official fact, the guide names the source beside it.</p>
-    <h3>Sources</h3>
-    <ul id="sourceList" class="source-list"></ul>
+  <section id="roadmapView" aria-label="Roadmap to the platinum" hidden>
+    <h2>Roadmap to the platinum</h2>
+    <p class="muted">Four stages, in order. Difficulty 4/10, about 200 hours, one playthrough, free roam after the story. Keep manual saves at the start and end of every chapter — there is no mission replay.</p>
+    <ol id="stageList" class="stages"></ol>
+    <h2>The 100% Completion checklist</h2>
+    <p class="muted">What A Long Road actually asks for. The in-game checklist under Progress &gt; Stats is the authority; these figures come from KeenGamer and gamemapa (via PowerPyx).</p>
+    <table id="checklistTable">
+      <thead><tr><th>What</th><th>Needed</th></tr></thead>
+      <tbody id="checklistBody"></tbody>
+    </table>
   </section>
 </main>
 
-<footer>
-  <p>An unofficial fan guide. Grand Theft Auto and GTA are trademarks of Take-Two Interactive; this guide uses no Rockstar artwork, logos or game screenshots. Built as an offline static page — it fetches nothing at run time and your progress never leaves your browser.</p>
+<aside id="drawer" aria-label="Trophy guide" hidden>
+  <button type="button" id="drawerClose" aria-label="Close guide">&times;</button>
+  <div id="drawerBody"></div>
+</aside>
+
+<footer id="sources">
+  <h2>Sources &amp; honesty notes</h2>
+  <p>Official names, descriptions and grades as Exophase and PSNProfiles list them from PlayStation, cross-checked against Push Square, KeenGamer, gamemapa (via PowerPyx and GamesRadar+) and Insider Gaming. Every guide above is written for this page in its own words and names its sources beside it. Rockstar has not published an official list, so anything no two guides agree on is marked UNCONFIRMED here rather than presented as fact.</p>
+  <ul id="sourceList"></ul>
+  <p class="muted">Works fully offline: nothing is fetched from the network, progress is saved in your browser only, and no account or wallet is ever asked for. No Rockstar artwork is used; the look is our own.</p>
 </footer>
 
 <script type="module" src="app.js"></script>

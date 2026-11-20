@@ -4,22 +4,16 @@
 [![rank](https://make.fun/badge/gta6-trophy-guide-01/balamemas-blip/gta6-trophy-guide-01/rank.svg)](https://make.fun/bounty/gta6-trophy-guide-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
 [![reward](https://make.fun/badge/gta6-trophy-guide-01/balamemas-blip/gta6-trophy-guide-01/reward.svg)](https://make.fun/bounty/gta6-trophy-guide-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
 
-An offline guide and tracker for all 55 Grand Theft Auto VI trophies on PlayStation 5 — a roadmap to the platinum, missable warnings, and a cited how-to for every trophy.
+An offline guide and tracker for all 55 Grand Theft Auto VI trophies on PlayStation 5 — 1 platinum, 2 gold, 6 silver, 46 bronze, all offline, one playthrough. Every trophy carries its official name, description and grade, a guide written for this page in its own words with its sources named beside it, a roadmap to the platinum in four stages, the full 100% Completion checklist, a missable flag on the one trophy the guides call potentially missable (Positive Mental Attitude), and an UNCONFIRMED flag on the seven trophies whose method no two guides have yet verified. Progress saves in the browser, exports to a file and imports back; filters cover story, side characters, collectibles, activities, robberies, money and mischief, and a spoiler setting hides story trophies until earned.
 
 ## Run it
 
 ```sh
-mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
+node serve.ts
 ```
+
+Then open http://localhost:8080 in desktop Chrome. No build step, no network: the app is plain static files under `app/`, and `node main.ts` (with `MAKEFUN_OUTPUT_DIR` set) hands it in as the entry.
 
 ---
 
 <sub>Entered on [make.fun](https://make.fun/?ref=w85gyfdr&utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01) · AI agents build software for cash rewards</sub>
-
-## About this guide
-
-- **55 trophies**: 1 platinum, 2 gold, 6 silver, 46 bronze; 28 hidden on PlayStation. All offline — there are no online trophies.
-- **Tracker**: tick trophies off and your progress saves in the browser (localStorage). Export it to a file and import it back. Filter by kind (story, missable, collectibles, activities, side quests, open world, money, online) and grade, search by name or keyword, and hide story spoilers until a trophy is earned.
-- **Roadmap**: six stages to the platinum, built from the official trophy descriptions, each with its own earned tally.
-- **Honest about what is unknown**: the game only just released and no verified missable list exists yet, so unconfirmed methods are marked unconfirmed instead of guessed — including the five hidden trophies the community has not solved. Names, descriptions and grades are the official PlayStation list (via Exophase & PSNProfiles); counts and methods cite Push Square, KeenGamer, gamemapa.com and Insider Gaming.
-- **Offline**: plain static files under `app/`, no build step, no network requests at run time. Serve it with `node serve.ts` and open http://localhost:8080, or use any static server with `app/` at its root.

@@ -1,64 +1,41 @@
-// Development server for the guide: serves app/ on http://localhost:8080
-// (`node serve.ts --port <n>` for another port). Node 22, standard library
-// only. It sends the MIME types a browser needs and refuses any path that
-// escapes app/. A convenience for local testing, not a public web server.
-import { createReadStream, statSync } from 'node:fs';
-import { createServer } from 'node:http';
-import { extname, join, normalize, resolve, sep } from 'node:path';
-import { fileURLToPath } from 'node:url';
+// Tiny static server for trying the guide locally: serves app/ at its root
+// on http://localhost:8080. No build step, no dependencies, Node 22 only.
+// Usage: node serve.ts  (then open http://localhost:8080 in desktop Chrome)
 
-const appRoot = resolve(fileURLToPath(new URL('./app', import.meta.url)));
+import { createServer } from "node:http";
+import { readFile } from "node:fs/promises";
+import { extname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 
-const args = process.argv.slice(2);
-const portFlag = args.indexOf('--port');
-const wanted = portFlag === -1 ? 8080 : Number(args[portFlag + 1]);
-const port = Number.isInteger(wanted) && wanted > 0 && wanted < 65536 ? wanted : 8080;
+const appDir = fileURLToPath(new URL("./app", import.meta.url));
+const port = Number(process.env.PORT ?? 8080);
 
-const TYPES = {
-  '.html': 'text/html; charset=utf-8',
-  '.js': 'text/javascript; charset=utf-8',
-  '.mjs': 'text/javascript; charset=utf-8',
-  '.css': 'text/css; charset=utf-8',
-  '.json': 'application/json; charset=utf-8',
-  '.svg': 'image/svg+xml',
-  '.png': 'image/png',
-  '.jpg': 'image/jpeg',
-  '.jpeg': 'image/jpeg',
-  '.webp': 'image/webp',
-  '.ico': 'image/x-icon',
-  '.woff2': 'font/woff2',
-  '.webmanifest': 'application/manifest+json',
+const MIME = {
+  ".html": "text/html; charset=utf-8",
+  ".css": "text/css; charset=utf-8",
+  ".js": "text/javascript; charset=utf-8",
+  ".mjs": "text/javascript; charset=utf-8",
+  ".json": "application/json; charset=utf-8",
+  ".png": "image/png",
+  ".jpg": "image/jpeg",
+  ".svg": "image/svg+xml",
 };
 
-createServer((req, res) => {
-  let path = '/';
+const server = createServer(async (request, response) => {
   try {
-    path = decodeURIComponent(new URL(req.url ?? '/', 'http://localhost').pathname);
+    const url = new URL(request.url ?? "/", "http://localhost");
+    let path = decodeURIComponent(url.pathname);
+    if (path === "/") path = "/index.html";
+    if (path.includes("..")) throw Object.assign(new Error("bad path"), { code: "BAD" });
+    const body = await readFile(join(appDir, path));
+    response.writeHead(200, { "content-type": MIME[extname(path)] ?? "application/octet-stream" });
+    response.end(body);
   } catch {
-    res.writeHead(400).end('bad request');
-    return;
+    response.writeHead(404, { "content-type": "text/plain; charset=utf-8" });
+    response.end("Not found\n");
   }
-  if (path.endsWith('/')) path += 'index.html';
-  const file = resolve(join(appRoot, normalize(path)));
-  if (file !== appRoot && !file.startsWith(appRoot + sep)) {
-    res.writeHead(403).end('forbidden');
-    return;
-  }
-  let size;
-  try {
-    const info = statSync(file);
-    if (!info.isFile()) throw new Error('not a file');
-    size = info.size;
-  } catch {
-    res.writeHead(404).end('not found');
-    return;
-  }
-  res.writeHead(200, {
-    'content-type': TYPES[extname(file).toLowerCase()] ?? 'application/octet-stream',
-    'content-length': size,
-    'cache-control': 'no-store',
-  });
-  createReadStream(file).pipe(res);
-}).listen(port, '127.0.0.1', () => {
-  console.log(`app/ is on http://localhost:${port}`);
+});
+
+server.listen(port, () => {
+  console.log(`Leonida Trophy Guide at http://localhost:${port}`);
 });

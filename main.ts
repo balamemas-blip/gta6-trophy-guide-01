@@ -1,81 +1,94 @@
-// GTA VI trophy guide — the entrypoint (Node 22, standard library only).
+// Leonida Trophy Guide — entrypoint for make.fun's gta6-trophy-guide-01.
+// Node 22, standard library only. It hands the guide in: it copies this
+// repository's app/ (the offline guide) and screenshots/ (four renders of
+// it) into the output directory and writes dossier.json there, using the
+// vendored make.fun library so the scorer can rebuild the same dossier
+// byte for byte from the same files.
 //
-// The guide itself is plain static files under app/: index.html, style.css,
-// app.js, tracker.js, roadmap.js and the trophy data in
-// app/data/trophies.json. Any static file server can host it and it works
-// with the network off. This program is the handover: it first checks the
-// guide is complete (all 55 trophies with a guide each, 3–4 screenshots
-// inside the size cap), then copies app/ and screenshots/ from beside this
-// file into the output directory and writes dossier.json there with the
-// vendored make.fun library, exactly as the scorer rebuilds it.
-// vendor/makefun-frontend.ts is the kit's copy and must stay unchanged.
-//
-// Run it outside the grader with:
+// Outside the grader, MAKEFUN_OUTPUT_DIR stands in for /output:
 //   mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
+//
+// The guide itself is plain static files: app/index.html opens in desktop
+// Chrome from any static server, works with the network off, and keeps its
+// trophy data in app/data/trophies.json (55 trophies, each with its official
+// name, description and grade, a guide in our own words, and its sources).
 
-import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
-import { join } from 'node:path';
-import { fileURLToPath } from 'node:url';
-import { buildDossier } from './vendor/makefun-frontend.ts';
+import { cpSync, existsSync, mkdirSync, readdirSync, statSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
+import { fileURLToPath } from "node:url";
+import { buildDossier } from "./vendor/makefun-frontend.ts";
 
-const repoRoot = fileURLToPath(new URL('.', import.meta.url));
-const outputDir = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
-const MAX_SHOT_BYTES = 262144;
-const EXPECTED_TROPHIES = 55;
+// The scorer's own caps, as the kit's RULES.txt states them: at most 4
+// screenshots of 256 KiB each, at most 993 files / 48 MiB under app/, and
+// a dossier text of at most 160 KiB. We check the cheap ones ourselves
+// before the library does, so a mistake fails here with a plain message.
+const MAX_SCREENSHOTS = 4;
+const MAX_SCREENSHOT_BYTES = 262144;
+const MAX_APP_FILES = 993;
+const MAX_APP_BYTES = 50331648;
+const DOSSIER_TEXT_MAX_BYTES = 163840;
 
-// Pre-flight: the guide and its screenshots are the entry, so refuse to
-// hand in an incomplete one rather than silently producing a thin dossier.
-function checkGuideComplete() {
-  for (const folder of ['app', 'screenshots']) {
-    if (!existsSync(join(repoRoot, folder))) {
-      throw new Error(`missing ${folder}/ beside main.ts — run from the repository root`);
+const repoRoot = fileURLToPath(new URL(".", import.meta.url));
+const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
+
+function countAppFiles(dir) {
+  let files = 0;
+  let bytes = 0;
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const path = join(dir, entry.name);
+    if (entry.isDirectory()) {
+      const sub = countAppFiles(path);
+      files += sub.files;
+      bytes += sub.bytes;
+    } else if (entry.isFile()) {
+      files += 1;
+      bytes += statSync(path).size;
+    } else {
+      throw new Error(`app/ holds a non-file entry: ${path}`);
     }
   }
-  const data = JSON.parse(readFileSync(join(repoRoot, 'app', 'data', 'trophies.json'), 'utf8'));
-  const trophies = Array.isArray(data) ? data : data.trophies;
-  if (!Array.isArray(trophies) || trophies.length !== EXPECTED_TROPHIES) {
-    throw new Error(`expected ${EXPECTED_TROPHIES} trophies, found ${Array.isArray(trophies) ? trophies.length : 'none'}`);
-  }
-  for (const trophy of trophies) {
-    if (typeof trophy.name !== 'string' || !trophy.name.trim()) {
-      throw new Error('a trophy is missing its official name');
-    }
-    if (typeof trophy.guide !== 'string' || !trophy.guide.trim()) {
-      throw new Error(`trophy ${trophy.name} has no guide`);
-    }
-  }
-  const shots = readdirSync(join(repoRoot, 'screenshots')).filter((name) => !name.startsWith('.'));
-  if (shots.length < 3 || shots.length > 4) {
-    throw new Error(`expected 3–4 screenshots, found ${shots.length}`);
-  }
-  for (const shot of shots) {
-    const size = statSync(join(repoRoot, 'screenshots', shot)).size;
-    if (size > MAX_SHOT_BYTES) throw new Error(`screenshot ${shot} is ${size} bytes, over the 256 KiB cap`);
-  }
-  return shots.length;
+  return { files, bytes };
 }
 
-const shotCount = checkGuideComplete();
+function checkInputs() {
+  const appDir = join(repoRoot, "app");
+  const shotsDir = join(repoRoot, "screenshots");
+  if (!existsSync(join(appDir, "index.html"))) throw new Error("app/index.html is missing");
+  if (!existsSync(join(appDir, "data", "trophies.json"))) throw new Error("app/data/trophies.json is missing");
+  const app = countAppFiles(appDir);
+  if (app.files > MAX_APP_FILES) throw new Error(`app/ holds ${app.files} files, over the ${MAX_APP_FILES} cap`);
+  if (app.bytes > MAX_APP_BYTES) throw new Error(`app/ is ${app.bytes} bytes, over the ${MAX_APP_BYTES} cap`);
+  if (!existsSync(shotsDir)) throw new Error("screenshots/ is missing");
+  const shots = readdirSync(shotsDir).filter((name) => !name.startsWith("."));
+  if (shots.length < 3 || shots.length > MAX_SCREENSHOTS) {
+    throw new Error(`screenshots/ holds ${shots.length} images, need 3 or 4`);
+  }
+  for (const name of shots) {
+    const size = statSync(join(shotsDir, name)).size;
+    if (size > MAX_SCREENSHOT_BYTES) throw new Error(`screenshots/${name} is ${size} bytes, over the 256 KiB cap`);
+  }
+}
 
-mkdirSync(outputDir, { recursive: true });
-cpSync(join(repoRoot, 'app'), join(outputDir, 'app'), { recursive: true });
-mkdirSync(join(outputDir, 'screenshots'), { recursive: true });
-cpSync(join(repoRoot, 'screenshots'), join(outputDir, 'screenshots'), { recursive: true });
+function handIn() {
+  checkInputs();
+  mkdirSync(outDir, { recursive: true });
+  cpSync(join(repoRoot, "app"), join(outDir, "app"), { recursive: true });
+  mkdirSync(join(outDir, "screenshots"), { recursive: true });
+  cpSync(join(repoRoot, "screenshots"), join(outDir, "screenshots"), { recursive: true });
+  const dossier = buildDossier(outDir, {
+    text_max_bytes: DOSSIER_TEXT_MAX_BYTES,
+    screenshots: { max: MAX_SCREENSHOTS, max_bytes: MAX_SCREENSHOT_BYTES },
+    app_max_files: MAX_APP_FILES,
+    app_max_bytes: MAX_APP_BYTES,
+  });
+  writeFileSync(join(outDir, "dossier.json"), dossier);
+  const shots = readdirSync(join(outDir, "screenshots")).filter((name) => !name.startsWith("."));
+  const app = countAppFiles(join(outDir, "app"));
+  console.log(
+    `Handed in: app/ (${app.files} files, ${app.bytes} bytes), ` +
+      `screenshots/ (${shots.length}: ${shots.join(", ")}), ` +
+      `dossier.json (${dossier.length} bytes) -> ${outDir}`,
+  );
+}
 
-// Caps mirror the gate: at most 4 screenshots of 256 KiB each, app/ at most
-// 993 files and directories and 48 MiB, dossier text at most 160 KiB.
-const dossierPath = join(outputDir, 'dossier.json');
-writeFileSync(
-  dossierPath,
-  buildDossier(outputDir, {
-    text_max_bytes: 163840,
-    screenshots: { max: 4, max_bytes: MAX_SHOT_BYTES },
-    app_max_files: 993,
-    app_max_bytes: 50331648,
-  }),
-);
-
-// Post-write check: the dossier is the entry's hand-in, so confirm it landed
-// and report its size alongside the screenshot count.
-const dossierSize = statSync(dossierPath).size;
-console.log(`wrote ${outputDir} — app/ + ${shotCount} screenshots + dossier.json (${dossierSize} bytes)`);
+handIn();
